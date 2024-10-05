@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button"
 import { ShoppingCart, Instagram, Twitter, Youtube, Send } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import camisetaNasa from '/camiseta_nasa.png'
+import tazaNasa from '/taza_nasa.png'
+import stickersNasa from '/stickers_nasa.png'
+import vortex from '/icono_vortex.jpeg'
+import planet from '/icono_planeta.jpeg'
+import satelite from '/icono_satelite.jpeg'
 
 interface Product {
   id: number
@@ -15,9 +21,9 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: "Space Shuttle T-Shirt", price: 25, points: 50, image: "/camiseta_nasa.png" },
-  { id: 2, name: "Asteroid Mug", price: 15, points: 30, image: "/taza_nasa.png" },
-  { id: 3, name: "Planet Sticker Set", price: 10, points: 20, image: "/stickers_nasa.png" },
+  { id: 1, name: "Space Shuttle T-Shirt", price: 25, points: 50, image: camisetaNasa },
+  { id: 2, name: "Asteroid Mug", price: 15, points: 30, image: tazaNasa },
+  { id: 3, name: "Planet Sticker Set", price: 10, points: 20, image: stickersNasa },
 ]
 
 interface RankingUser {
@@ -47,22 +53,22 @@ const spaceGames: SpaceGame[] = [
     id: 1,
     name: "Explora Marte",
     description: "Explora la superficie de Marte y descubre sus secretos.",
-    image: "/icono_vortex.jpeg",
-    preview: "/icono_vortex.jpeg"
+    image: vortex,
+    preview:vortex
   },
   {
     id: 2,
     name: "Identifica los Planetas",
     description: "Pon a prueba tus conocimientos sobre los planetas del sistema solar.",
-    image: "/icono_planeta.jpeg",
-    preview: "/icono_planeta.jpeg"
+    image: planet,
+    preview: planet
   },
   {
     id: 3,
     name: "Construye tu Estación Espacial",
     description: "Diseña y construye tu propia estación espacial.",
-    image: "/icono_satelite.jpeg",
-    preview: "/icono_satelite.jpeg"
+    image: satelite,
+    preview: satelite
   },
 ]
 
@@ -255,7 +261,7 @@ export default function ComponentResponsive() {
                   placeholder="Leave a comment..."
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
-                  className="w-full mb-4"
+                  className="w-full mb-4 text-black"
                   rows={2}
                 />
                 <Button type="submit" className="w-full flex items-center justify-center">
@@ -402,7 +408,7 @@ export default function ComponentResponsive() {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-grow"
+                  className="flex-grow text-black"
                   required
                 />
                 <Button type="submit" className="w-full lg:w-auto">Subscribe</Button>
