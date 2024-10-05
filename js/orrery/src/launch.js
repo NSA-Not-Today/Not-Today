@@ -160,7 +160,7 @@ function launch() {
         if (ORR.times.parsedDate != 0 && !isNaN(ORR.times.parsedDate)) {
             ORR.times.ephTime = MJDToEphTime(unixToMJD(ORR.times.parsedDate));
         }
-        ORR.searchLists.orderedNames = ORR.system.map(i => i.name); 
+        ORR.searchLists.orderedNames = ORR.system.map(i => i.name);
         for (let i = 0; i < ORR.moons.length; i++) {
             ORR.moons[i].orbitId = ORR.searchLists.orderedNames.findIndex((e) => e == ORR.moons[i].orbiting);
         }
@@ -182,7 +182,7 @@ function launch() {
             }
             ORR.system[i].childId = ORR.scene.children.length-1;
         }
-        
+
         for (let i = 0; i < ORR.moons.length; i++) {
             ORR.paths[ORR.moons[i].path].orbitId = ORR.moons[i].orbitId;
             ORR.system[ORR.moons[i].orbitId].moons++;
@@ -205,10 +205,10 @@ function launch() {
             ORR.precessing[i] = ORR.searchLists.orderedNames.findIndex((e) => e == ORR.precessing[i]);
         }
 
-        document.getElementById("smallRoids").innerHTML = smallAsteroids;
+        //document.getElementById("smallRoids").innerHTML = smallAsteroids;
         $(".gratLabel, .extraData").hide();
         ORR.searchLists.combined = ORR.searchLists.planetNames.concat(ORR.searchLists.moonNames, ORR.searchLists.asteroidNames, ORR.searchLists.cometNames);
-        
+
         ORR.animate(); // start the main loop
     }
 }

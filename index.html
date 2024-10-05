@@ -62,47 +62,6 @@
         <div id="inputBox">
             <h3 id="date"></h3>
             <div>
-                <table>
-                    <tr>
-                        <td>
-                            <button id="now" title="Set time to now"><img src="data/now.svg"></button>
-                        </td>
-                        <td>
-                            <button id="reverse" title="Slow/reverse time"><img src="data/rewind.svg"></button>
-                        </td>
-                        <td id="speedfield">
-                            <span id="speed"></span><br>
-                            FPS:&nbsp;<span id="fps"></span>
-                        </td>
-                        <td>
-                            <button id="forward" title="Advance time"><img src="data/ff.svg"></button>
-                        </td>
-                        <td>
-                            <button id="play" title="Play/pause"><img id="playpause" src="data/pause.svg"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" id="latlong">
-                            Geolocation:&nbsp;<span id="lat">Default (Greenwich, UK)</span>&nbsp;<span id="long"></span>
-                        </td>
-                    </tr>
-                    <tr class="extraData">
-                        <td colspan="5">
-                            MJD:&nbsp;<span id="mjd"></span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;LST:&nbsp;<span id="lst"></span>&deg;
-                        </td>
-                    </tr>
-                </table>
-                <label for="autocomplete"><b>SEARCH FOR AN OBJECT:</b></label>
-                <input id="autocomplete" title="Type an object's name">
-                <fieldset>
-                    <legend>Include:&nbsp;&nbsp;</legend>
-                    <input type="checkbox" name="moonBox" id="moonBox" title="Allow moons in search" checked>
-                    <label for="moonBox">Moons</label>&nbsp;&nbsp;
-                    <input type="checkbox" name="asteroidBox" id="asteroidBox" title="Allow asteroids in search" checked>
-                    <label for="asteroidBox">Asteroids</label>&nbsp;&nbsp;
-                    <input type="checkbox" name="cometBox" id="cometBox" title="Allow comets in search" checked>
-                    <label for="cometBox">Comets</label>
-                </fieldset>
                 <div id="info">
                     <a id="infohead" href="" target="_blank"></a><br>
                     <a href="" target="_blank"><img src="" class="wikipic"></a><br>
@@ -135,72 +94,6 @@
                         Sun Azimuth:&nbsp;<span id="sunAz" class="data"></span>&rdquo;<br>
                     </span>
                 </div>
-            </div>  
-            <h3>Set Time and Geolocation</h3>
-            <div>
-                <table>
-                    <tr>
-                        <td>
-                            <label for="manualYear">Year:</label>
-                            <input id="manualYear" title="Year (&plusmn;9999)">
-                        </td>
-                        <td>
-                            <label for="manualDay">MMDD:</label>
-                            <input id="manualDay" title="Month and Day (MMDD)">
-                        </td>
-                        <td>
-                            <label for="manualTime">Time:</label>
-                            <input id="manualTime" title="Time of Day (HHMM in military time)">
-                        </td>
-                        <td style="vertical-align: bottom;">
-                            <button id="setTime" title="Set time"><img src="data/set.svg"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">
-                            Valid date range: 9999 BC to 9999 AD<br>Use negative year values for BC<br>Time in 4-digit military time
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="manualLat">Lat:</label>
-                            <input id="manualLat" title="Latitude (decimal degrees)">
-                        </td>
-                        <td>
-                            <label for="manualLon">Lon:</label>
-                            <input id="manualLon" title="Longitude (decimal degrees)">
-                        </td>
-                        <td colspan="2" style="vertical-align: bottom;">
-                            <button id="setCoords" title="Set coordinates"><img src="data/set.svg"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">
-                            Use decimal degrees for lat/long,<br>negative values for west or south
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <h3>Help</h3>
-            <div>
-                <p><b>SPACE BAR:</b> Pause/resume time<br>
-                <b>LEFT/RIGHT ARROW KEYS:</b> Change speed<br>
-                <b>DOWN ARROW KEY:</b> Set to current time<br>
-                <b>UP ARROW KEY:</b> Toggle chase mode on focused object<br>
-                <b>ESC:</b> Release focus on object<br>
-                <b>F2:</b> Hide/show UI panels<br>
-                <b>F4:</b> Hide/show celestial sphere<br>
-                <b>F8:</b> Hide/show extra time info</p>
-                <p><b>CLICK ON LABELS:</b> Shift focus to object and display info<br>
-                <b>CLICK ON INFO HEADER OR IMAGE:</b> Learn more on Wikipedia<br>
-                <b>LEFT/MID/RIGHT MOUSE + DRAG:</b> Rotate/zoom/translate around focus<br>
-                <b>SCROLL WHEEL:</b> Zoom to focus</p>
-                <p><b>HTTP VARIABLES - SET ON LAUNCH:</b><br>
-                <b>x: (decimal degrees)</b> Longitude<br>
-                <b>y: (decimal degrees)</b> Latitude<br>
-                <b>t: (YYYYMMDDHHMM)</b> Date<br>
-                <b>n: (integer)</b> Small asteroid limit (max: <span id="smallRoids"></span>)</p>
-                <button id="openSplash">About</button>
             </div>
             <!--
             <h3>Display Options</h3>
@@ -208,14 +101,6 @@
                 Orbit Opacity:<div id="slider"></div>
             </div>
             -->
-        </div>
-
-        <div id="splashScreen">
-            <img id="logo" src="data/logo.svg">
-            <p>CC BY 4.0 Chris Impink&nbsp;&nbsp;&bull;&nbsp;&nbsp;v1.1.7<br><br>
-            Data courtesy of <a href="http://nasa.gov" target="_blank">NASA</a>, <a href="http://jpl.nasa.gov" target="_blank">JPL</a>, <a href="http://en.wikipedia.org" target="_blank">Wikipedia</a>, and <a href="https://www.solarsystemscope.com" target="_blank">Solar System Scope</a>.<br>
-            Built with <a href="http://threejs.org" target="_blank">three.js</a> and <a href="http:jquery-ui.com" target="_blank">jQueryUI</a>. Available on <a href="https://github.com/bitterstoat/orrery" target="_blank">GitHub</a>.</p>
-            <button id="clearSplash">Close</button>
         </div>
     </body>
 </html>
