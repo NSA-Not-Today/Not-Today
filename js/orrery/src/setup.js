@@ -34,7 +34,7 @@ export const gratLabels = [];
 export const precessing = []; // orbits with temporal drift
 export const specialID = { earth:0, moon:0, pluto:0, charon:0 };
 export const center = { x:0, y:0 }; // screen center
-export const state = { clickedLabel: "", clickedPlanet: {}, lastClickedPlanet: {}, mousePos: new THREE.Vector3(0, 0, 1), following: false, lastFollow: new THREE.Vector3(), hoverLabel: false, extraData: false, orbitOpacity:0.5 };
+export const state = { clickedLabel: "", clickedPlanet: {}, lastClickedPlanet: {}, mousePos: new THREE.Vector3(0, 0, 1), following: false, lastFollow: new THREE.Vector3(), hoverLabel: false, extraData: false, orbitOpacity:1 };
 export const groundPosition = { latitude: 51.48, longitude: 0, default: true }; // default location is Greenwich
 export const times = { ephTime: ORR.MJDToEphTime(ORR.unixToMJD(Date.now())), speed: 8, lastSpeed: 8, rate: rates[8], pauseRate: 7, avgFPS: 0, parsedDate: 0 };
 export const searchLists = { combined: [], planetNames: [], moonNames: [], asteroidNames: [], cometNames: [], orderedNames: [] };
@@ -101,11 +101,11 @@ export const transparentMaterial = new THREE.LineBasicMaterial( { transparent: t
 
 // orbit path materials
 export let pathMaterials = [
-    new THREE.LineBasicMaterial({ color: 0x0033ff, linewidth: 1, transparent:true, opacity: 0.5 }),
-    new THREE.LineBasicMaterial({ color: 0x0033ff, linewidth: 1, transparent:true, opacity: 0.35 }),
-    new THREE.LineBasicMaterial({ color: 0x0033ff, linewidth: 1, transparent:true, opacity: 0.3 }),
-    new THREE.LineBasicMaterial({ color: 0x0033ff, linewidth: 1, transparent:true, opacity: 0.25 }),
-    new THREE.LineBasicMaterial({ color: 0x0033ff, linewidth: 1, transparent:true, opacity: 0.2 })
+    new THREE.LineBasicMaterial({ color: 0x909090, linewidth: 1, transparent:true, opacity: 0.5 }), // Planet trajectory color
+    new THREE.LineBasicMaterial({ color: 0x0033ff, linewidth: 1, transparent:true, opacity: 0.35 }), // Dwarf and possible dwarf planet trajectory color
+    new THREE.LineBasicMaterial({ color: 0xC42B57, linewidth: 1, transparent:true, opacity: 0.35 }), // Large asteroids and moons trajectory color
+    new THREE.LineBasicMaterial({ color: 0xC42B57, linewidth: 1, transparent:true, opacity: 0.35 }), // Comet trajectory color
+    new THREE.LineBasicMaterial({ color: 0xC42B57, linewidth: 1, transparent:true, opacity: 1 }) // Asteroid / minor planet trajectory ?
 ];
 export function setPathMaterials(n) { [
         { opacity: 1.0 * n },
