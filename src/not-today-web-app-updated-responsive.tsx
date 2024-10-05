@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button"
 import { ShoppingCart, Instagram, Twitter, Youtube, Send } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import camisetaNasa from '/Not-today/camiseta_nasa.png'
-import tazaNasa from '/Not-today/taza_nasa.png'
-import stickersNasa from '/Not-today/stickers_nasa.png'
-import vortex from '/Not-today/icono_vortex.jpeg'
-import planet from '/Not-today/icono_planeta.jpeg'
-import satelite from '/Not-today/icono_satelite.jpeg'
+import camisetaNasa from '/camiseta_nasa.png'
+import tazaNasa from '/taza_nasa.png'
+import stickersNasa from '/stickers_nasa.png'
+import vortex from '/icono_vortex.jpeg'
+import planet from '/icono_planeta.jpeg'
+import satelite from '/icono_satelite.jpeg'
 
 interface Product {
   id: number
@@ -339,7 +339,7 @@ export default function ComponentResponsive() {
             <div className="grid grid-cols-1 gap-4">
               {products.map((product) => (
                 <div key={product.id} className="bg-gray-700 p-2 rounded-lg flex items-center">
-                  <img src={product.image} alt={product.name} className="w-16 h-16 object-cover rounded-md mr-3" />
+                  <img src={`/Not-today/${product.image}`} alt={product.name} className="w-16 h-16 object-cover rounded-md mr-3" />
                   <div className="flex-grow">
                     <h4 className="text-sm font-semibold">{product.name}</h4>
                     <p className="text-xs text-gray-400">${product.price} or {product.points} points</p>
@@ -370,7 +370,7 @@ export default function ComponentResponsive() {
                   className={`bg-gray-700 p-2 rounded-lg flex items-center cursor-pointer ${selectedGame?.id === game.id ? 'ring-2 ring-blue-500' : ''}`}
                   onClick={() => setSelectedGame(game)}
                 >
-                  <img src={game.image} alt={game.name} className="w-16 h-16 object-cover rounded-md mr-3" />
+                  <img src={`/Not-today/${game.image}`} alt={game.name} className="w-16 h-16 object-cover rounded-md mr-3" />
                   <div>
                     <h4 className="text-sm font-semibold">{game.name}</h4>
                     <p className="text-xs text-gray-400">{game.description}</p>
@@ -385,7 +385,7 @@ export default function ComponentResponsive() {
             <h3 className="text-lg font-semibold mb-2">Game Preview</h3>
             {selectedGame && (
               <div>
-                <img src={selectedGame.preview} alt={`${selectedGame.name} preview`} className="w-full h-64 object-contain rounded-lg mb-2" />
+                <img src={`/Not-today/${selectedGame.preview}`} alt={`${selectedGame.name} preview`} className="w-full h-64 object-contain rounded-lg mb-2" />
                 <h4 className="text-md font-semibold">{selectedGame.name}</h4>
                 <p className="text-sm text-gray-400">{selectedGame.description}</p>
                 <Button className="mt-2">Play Now</Button>
