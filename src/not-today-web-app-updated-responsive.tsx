@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
@@ -121,9 +120,9 @@ export default function ComponentResponsive() {
     setCart(prevCart => [...prevCart, product])
   }
 
-  const removeFromCart = (productId: number) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== productId))
-  }
+//   const removeFromCart = (productId: number) => {
+//     setCart(prevCart => prevCart.filter(item => item.id !== productId))
+//   }
 
   const buyWithMoney = (product: Product) => {
     addToCart(product)
