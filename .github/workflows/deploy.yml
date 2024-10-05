@@ -34,3 +34,6 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./dist
           allow_empty_commit: true
+          keep_files: true
+          exclude_files: |
+            public/**
