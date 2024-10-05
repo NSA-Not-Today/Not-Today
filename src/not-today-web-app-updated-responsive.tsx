@@ -183,7 +183,7 @@ export default function ComponentResponsive() {
           <div className="lg:col-span-2 bg-gray-800 bg-opacity-90 p-4 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Solar System Orrery</h2>
             <div className="aspect-[3/2] bg-gray-900 rounded-lg overflow-hidden">
-              <iframe src="about:blank" className="w-full h-full" aria-label="Detailed solar system orrery"></iframe>
+              <iframe src="https://nsa-not-today.github.io/Not-Today-orrery/" className="w-full h-full" aria-label="Detailed solar system orrery"></iframe>
             </div>
             <p className="text-xs mt-2 text-gray-400">Note: In the future, you'll be able to select asteroids here to view details in the Nearby Objects section.</p>
           </div>
