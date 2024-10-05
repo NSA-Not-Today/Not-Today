@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button"
 import { ShoppingCart, Instagram, Twitter, Youtube, Send } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import camisetaNasa from '/camiseta_nasa.png'
-import tazaNasa from '/taza_nasa.png'
-import stickersNasa from '/stickers_nasa.png'
-import vortex from '/icono_vortex.jpeg'
-import planet from '/icono_planeta.jpeg'
-import satelite from '/icono_satelite.jpeg'
+import camisetaNasa from '/Not-today/camiseta_nasa.png'
+import tazaNasa from '/Not-today/taza_nasa.png'
+import stickersNasa from '/Not-today/stickers_nasa.png'
+import vortex from '/Not-today/icono_vortex.jpeg'
+import planet from '/Not-today/icono_planeta.jpeg'
+import satelite from '/Not-today/icono_satelite.jpeg'
 
 interface Product {
   id: number
