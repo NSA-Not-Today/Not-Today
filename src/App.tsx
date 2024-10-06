@@ -1,4 +1,3 @@
-import './App.css'
 import ComponentResponsive from './not-today-web-app-updated-responsive'
 
 function App() {
