@@ -202,19 +202,19 @@ export default function ComponentResponsive() {
               <Accordion type="single" collapsible className="w-full">
                 {[
                   {
-                    name: "Asteroid 2023 XY",
-                    distance: "1.2km",
-                    content: "This asteroid is about the size of 3 Empire State Buildings stacked on top of each other. Its mass is equivalent to approximately 7,000 blue whales!"
+                    name: "2010 RF43",
+                    distance: " 25.000 Opel Corsas",
+                    content: "Este asteroide, de unos 300 metros de diámetro, tiene una masa estimada en unos 50 millones de toneladas, lo que equivale a 25.000 Opel Corsas. En su punto más cercano, pasaría a unos 5 millones de kilómetros de la Tierra, lo que sería como dar 12.500 vueltas alrededor del mundo o recorrer 6.500.000 campos de fútbol seguidos."
                   },
                   {
-                    name: "Comet Swift-Tuttle",
-                    distance: "26km",
-                    content: "This comet is as wide as the island of Manhattan. Its mass is comparable to about 500 million Statues of Liberty!"
+                    name: "Apophis",
+                    distance: "78 Camp Nous",
+                    content: "Con un diámetro de 340 metros, Apophis pesa alrededor de 26 millones de toneladas, similar a 130.000 elefantes africanos. En 2029, pasará a solo 31.000 kilómetros de la Tierra, lo que es menos de 1/10 de la distancia a la Luna, o lo que es lo mismo, unos 78 estadios Camp Nou alineados."
                   },
                   {
-                    name: "NEO 2021 PDC",
-                    distance: "0.8km",
-                    content: "This Near Earth Object is about twice the size of the Eiffel Tower. Its weight is equivalent to approximately 34,000 Opel Corsa cars!"
+                    name: "Bennu",
+                    distance: "9 millones de Bermabéus",
+                    content: "Bennu, con 490 metros de diámetro, pesa unos 78 millones de toneladas, el equivalente a 39.000 camiones de 18 ruedas. Podría pasar a 7 millones de kilómetros de la Tierra, lo que sería como recorrer 18.000 vueltas al planeta o atravesar 9 millones de estadios de fútbol."
                   },
                 ].map(item => {
                   return (
