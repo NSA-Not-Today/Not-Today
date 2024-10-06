@@ -54,7 +54,7 @@ const spaceGames: SpaceGame[] = [
     name: "Explora Marte",
     description: "Explora la superficie de Marte y descubre sus secretos.",
     image: vortex,
-    preview:vortex
+    preview: vortex
   },
   {
     id: 2,
@@ -126,9 +126,9 @@ export default function ComponentResponsive() {
     setCart(prevCart => [...prevCart, product])
   }
 
-//   const removeFromCart = (productId: number) => {
-//     setCart(prevCart => prevCart.filter(item => item.id !== productId))
-//   }
+  //   const removeFromCart = (productId: number) => {
+  //     setCart(prevCart => prevCart.filter(item => item.id !== productId))
+  //   }
 
   const buyWithMoney = (product: Product) => {
     addToCart(product)
@@ -234,105 +234,106 @@ export default function ComponentResponsive() {
               </Accordion>
             </div>
 
-            {/* Asteroid Approach Section */}
             <div className="bg-gray-800 flex-1 flex flex-col justify-between bg-opacity-90 p-4 rounded-lg">
-              <div>
-                <h2 className="text-lg font-semibold mb-2 flex items-center justify-between">
-                  <span>Asteroid Approach</span>
-                  <span className="ml-2 px-2 py-1 text-xs font-bold text-white bg-red-600 rounded">LIVE</span>
-                </h2>
-                <div className="relative aspect-video bg-gray-700 rounded-lg overflow-hidden">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/0FBiyFpV__g"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title="Embedded youtube"
-                  />
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 px-2 py-1 rounded text-sm">
-                    {viewerCount.toLocaleString()} viewers
-                  </div>
+              {/* Daily Quiz */}
+              <div className="bg-gray-800 bg-opacity-90 p-4 rounded-lg">
+                <h3 className="text-lg font-semibold mb-2">Daily Quiz</h3>
+                <p className="text-sm mb-3">How do you think would be the best way to deal with an asteroid that's going to destroy Earth?</p>
+                <div className="space-y-2">
+                  {["Nuke it", "Redirect its trajectory", "Build a giant shield"].map((answer) => (
+                    <Button
+                      key={answer}
+                      onClick={() => handleAnswerSubmit(answer)}
+                      disabled={isAnswered}
+                      className={`w-full justify-start ${isAnswered && answer === "Redirect its trajectory"
+                        ? "bg-green-500 hover:bg-green-600"
+                        : isAnswered && answer === selectedAnswer
+                          ? "bg-red-500 hover:bg-red-600"
+                          : ""
+                        }`}
+                    >
+                      {answer}
+                    </Button>
+                  ))}
                 </div>
-                <p className="text-xs mb-2 text-gray-400">Live view of Earth from the International Space Station</p>
-              </div>
+                {isAnswered && (
+                  <p className="mt-3 text-sm">
+                    {selectedAnswer === "Redirect its trajectory"
+                      ? "Correct! Redirecting the asteroid's trajectory is generally considered the safest and most effective method."
+                      : "Not quite. Redirecting the asteroid's trajectory is generally considered the safest and most effective method."}
+                  </p>
+                )}
+                <p className="mt-3 text-sm font-semibold">Your score: {score}</p>
 
-              <form onSubmit={handleCommentSubmit} className="mt-2">
-                <Textarea
-                  placeholder="Leave a comment..."
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                  className="w-full mb-4 text-black"
-                  rows={2}
-                />
-                <Button type="submit" className="w-full flex items-center justify-center">
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Comment
-                </Button>
-              </form>
+                {/* Top Defenders Ranking */}
+                <div className="mt-4">
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="top-defenders">
+                      <AccordionTrigger className="bg-gray-700 p-2 rounded-t text-left">
+                        <div className="flex justify-between items-center w-full">
+                          <span>Top Defenders Ranking</span>
+                          <Badge variant="secondary">{rankingUsers.length}</Badge>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="bg-gray-600 p-2 rounded-b">
+                        {rankingUsers.map((user, index) => (
+                          <div key={index} className="flex items-center justify-between py-2 border-b border-gray-500 last:border-b-0">
+                            <div className="flex items-center">
+                              <img src={user.avatar} alt={user.name} className="w-8 h-8 rounded-full mr-2" />
+                              <span className="text-sm font-medium">{user.name}</span>
+                            </div>
+                            <span className="text-sm font-bold" style={{ color: `hsl(${user.points / 10}, 70%, 60%)` }}>
+                              {user.points} pts
+                            </span>
+                          </div>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Daily Quiz and Space Merch Shop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-          {/* Daily Quiz */}
-          <div className="bg-gray-800 bg-opacity-90 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold mb-2">Daily Quiz</h3>
-            <p className="text-sm mb-3">How do you think would be the best way to deal with an asteroid that's going to destroy Earth?</p>
-            <div className="space-y-2">
-              {["Nuke it", "Redirect its trajectory", "Build a giant shield"].map((answer) => (
-                <Button
-                  key={answer}
-                  onClick={() => handleAnswerSubmit(answer)}
-                  disabled={isAnswered}
-                  className={`w-full justify-start ${isAnswered && answer === "Redirect its trajectory"
-                    ? "bg-green-500 hover:bg-green-600"
-                    : isAnswered && answer === selectedAnswer
-                      ? "bg-red-500 hover:bg-red-600"
-                      : ""
-                    }`}
-                >
-                  {answer}
-                </Button>
-              ))}
+          <div>
+            {/* Asteroid Approach Section */}
+            <div>
+              <h2 className="text-lg font-semibold mb-2 flex items-center justify-between">
+                <span>Asteroid Approach</span>
+                <span className="ml-2 px-2 py-1 text-xs font-bold text-white bg-red-600 rounded">LIVE</span>
+              </h2>
+              <div className="relative aspect-video bg-gray-700 rounded-lg overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/0FBiyFpV__g"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Embedded youtube"
+                />
+                <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 px-2 py-1 rounded text-sm">
+                  {viewerCount.toLocaleString()} viewers
+                </div>
+              </div>
+              <p className="text-xs mb-2 text-gray-400">Live view of Earth from the International Space Station</p>
             </div>
-            {isAnswered && (
-              <p className="mt-3 text-sm">
-                {selectedAnswer === "Redirect its trajectory"
-                  ? "Correct! Redirecting the asteroid's trajectory is generally considered the safest and most effective method."
-                  : "Not quite. Redirecting the asteroid's trajectory is generally considered the safest and most effective method."}
-              </p>
-            )}
-            <p className="mt-3 text-sm font-semibold">Your score: {score}</p>
 
-            {/* Top Defenders Ranking */}
-            <div className="mt-4">
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="top-defenders">
-                  <AccordionTrigger className="bg-gray-700 p-2 rounded-t text-left">
-                    <div className="flex justify-between items-center w-full">
-                      <span>Top Defenders Ranking</span>
-                      <Badge variant="secondary">{rankingUsers.length}</Badge>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="bg-gray-600 p-2 rounded-b">
-                    {rankingUsers.map((user, index) => (
-                      <div key={index} className="flex items-center justify-between py-2 border-b border-gray-500 last:border-b-0">
-                        <div className="flex items-center">
-                          <img src={user.avatar} alt={user.name} className="w-8 h-8 rounded-full mr-2" />
-                          <span className="text-sm font-medium">{user.name}</span>
-                        </div>
-                        <span className="text-sm font-bold" style={{ color: `hsl(${user.points / 10}, 70%, 60%)` }}>
-                          {user.points} pts
-                        </span>
-                      </div>
-                    ))}
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
+            <form onSubmit={handleCommentSubmit} className="mt-2">
+              <Textarea
+                placeholder="Leave a comment..."
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                className="w-full mb-4 text-black"
+                rows={2}
+              />
+              <Button type="submit" className="w-full flex items-center justify-center">
+                <Send className="w-4 h-4 mr-2" />
+                Send Comment
+              </Button>
+            </form>
           </div>
-
           {/* Space Merch Shop */}
           <div className="bg-gray-800 bg-opacity-90 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-2">Space Merch Shop</h3>
