@@ -163,7 +163,7 @@ export default function ComponentResponsive() {
       <header className="sticky top-0 z-50 bg-gray-900 bg-opacity-90 border-b border-gray-700 p-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NOT%20TODAY-GnE0Qj8TwSANCBMN8NLteJ3F1vtWDs.png" alt="NOT TODAY logo" className="w-10 h-10 rounded-full" />
+            <img src="/favicon.ico" alt="NOT TODAY logo" className="w-10 h-10 rounded-full" />
             <h1 className="text-lg font-bold">NOT TODAY</h1>
           </div>
           <span className="text-sm text-blue-400 font-medium" aria-live="polite">
@@ -177,10 +177,10 @@ export default function ComponentResponsive() {
         {/* Daily Update and Fun Fact */}
         <div className="bg-gray-800 bg-opacity-90 p-4 rounded-lg mb-4">
           <div className="bg-gray-700 p-3 rounded-lg">
-            <h2 className="text-lg font-semibold mb-2">Daily Update</h2>
-            <p className="text-green-400 font-bold text-sm mb-2">No world-ending meteors today! 🎉</p>
-            <h3 className="text-base font-semibold mb-1">Fun Fact</h3>
-            <p className="text-xs">The asteroid belt between Mars and Jupiter contains millions of asteroids, but they're so spread out that spacecraft can usually pass through safely!</p>
+            <h2 className="text-3xl font-semibold mb-2">Daily Update</h2>
+            <p className="text-green-400 font-bold text-xl mb-8">No world-ending meteors today! 🎉</p>
+            <h3 className="text-3xl font-semibold mb-1">Fun Fact</h3>
+            <p className="text-xl">The asteroid belt between Mars and Jupiter contains millions of asteroids, but they're so spread out that spacecraft can usually pass through safely!</p>
           </div>
         </div>
 
@@ -213,7 +213,7 @@ export default function ComponentResponsive() {
                   },
                   {
                     name: "Bennu",
-                    distance: "9 millones de Bermabéus",
+                    distance: "9 millones de Bernabéus",
                     content: "Bennu, con 490 metros de diámetro, pesa unos 78 millones de toneladas, el equivalente a 39.000 camiones de 18 ruedas. Podría pasar a 7 millones de kilómetros de la Tierra, lo que sería como recorrer 18.000 vueltas al planeta o atravesar 9 millones de estadios de fútbol."
                   },
                 ].map(item => {
