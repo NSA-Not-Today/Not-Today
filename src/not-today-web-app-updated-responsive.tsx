@@ -221,7 +221,7 @@ export default function ComponentResponsive() {
                     <AccordionItem value={item.name} key={item.name}>
                       <AccordionTrigger className="bg-gray-700 p-2 rounded-t text-left">
                         <div className="flex justify-between items-center w-full">
-                          <span>{item.name}</span>
+                          <span className="text-lg">{item.name}</span>
                           <Badge variant="secondary">{item.distance}</Badge>
                         </div>
                       </AccordionTrigger>
@@ -237,7 +237,7 @@ export default function ComponentResponsive() {
             <div className="bg-gray-800 flex-1 flex flex-col justify-between bg-opacity-90 p-4 rounded-lg">
               {/* Daily Quiz */}
               <div className="bg-gray-800 bg-opacity-90 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">Daily Quiz</h3>
+                <h3 className="text-2xl font-semibold mb-2">Daily Quiz</h3>
                 <p className="text-sm mb-3">How do you think would be the best way to deal with an asteroid that's going to destroy Earth?</p>
                 <div className="space-y-2">
                   {["Nuke it", "Redirect its trajectory", "Build a giant shield"].map((answer) => (
@@ -245,7 +245,7 @@ export default function ComponentResponsive() {
                       key={answer}
                       onClick={() => handleAnswerSubmit(answer)}
                       disabled={isAnswered}
-                      className={`w-full justify-start ${isAnswered && answer === "Redirect its trajectory"
+                      className={`w-full text-lg justify-start ${isAnswered && answer === "Redirect its trajectory"
                         ? "bg-green-500 hover:bg-green-600"
                         : isAnswered && answer === selectedAnswer
                           ? "bg-red-500 hover:bg-red-600"
